@@ -82,6 +82,12 @@ export class KAKUPlatform implements DynamicPlatformPlugin {
   private createDevice(accessory: PlatformAccessory, deviceType: number) {
     switch (deviceType) {
       case 48: // 48 is dimmable group
+      case 34: // 34 is dimmable
+        new DimmableLightBulb(this, accessory);
+        break;
+      case 36: // 36 is a dimmable IKEA/HUE light
+        new DimmableLightBulb(this, accessory);
+        break;
       case 40: // 40 is a dimmable lightbulb
         new DimmableLightBulb(this, accessory);
         break;
